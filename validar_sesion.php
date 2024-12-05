@@ -4,8 +4,13 @@ $contraseña = $_POST['contraseña'];
 session_start();
 $_SESSION['usuario'] = $usuario;
 
-// Conexión a la base de datos
-$conexion = mysqli_connect("serverdemo2025.mysql.database.azure.com", "adminaz", "Contrasena123", "repositorio_c116");
+$server = "serverdemo2025.mysql.database.azure.com";
+$username = "adminaz";
+$password = "Contrasena123";
+$database = "repositorio_c116";
+$port = 3306;
+
+$conexion = mysqli_connect($server, $username, $password, $database, $port);
 
 // Prepara la consulta para evitar inyecciones SQL
 $consulta = "SELECT * FROM usuarios WHERE usuario = ? AND contraseña = ?";
