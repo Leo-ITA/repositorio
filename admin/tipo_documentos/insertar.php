@@ -4,7 +4,8 @@ $tipo = $_POST['tipo'];
 $descripcion = $_POST['descripcion'];
 
 // Conexión a la base de datos
-$conexion = mysqli_connect("localhost", "root", "", "repositorio_c116");
+$conexion = require_once 'db_config.php';
+$conexion = conectarBD();
 
 // Prepara la consulta para evitar inyecciones SQL
 $consulta = "INSERT INTO tipos_documentos VALUES ('$id', '$tipo', '$descripcion')";

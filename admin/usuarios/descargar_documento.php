@@ -7,7 +7,8 @@ if ($varsesion == null || $varsesion == '') {
     die();
 }
 
-$conexion = mysqli_connect("localhost", "root", "", "repositorio_c116");
+$conexion = require_once 'db_config.php';
+$conexion = conectarBD();
 
 $id = $_GET['id'];
 

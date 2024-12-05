@@ -3,7 +3,8 @@ $id = $_GET['id'];
 $usuario = $_GET['usuario'];
 
 // Conexión a la base de datos
-$conexion = mysqli_connect("localhost", "root", "", "repositorio_c116");
+$conexion = require_once 'db_config.php';
+$conexion = conectarBD();
 
 // Prepara la consulta para evitar inyecciones SQL
 $consulta = "DELETE FROM usuarios WHERE id='$id'";

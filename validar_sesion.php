@@ -4,19 +4,9 @@ $contraseña = $_POST['contraseña'];
 session_start();
 $_SESSION['usuario'] = $usuario;
 
-// Conexión a la base de datos en Azure
-$server = "serverdemo2025.mysql.database.azure.com";
-$username = "adminaz";
-$password = "Contrasena123";
-$database = "repositorio_c116";
-$port = 3306;
-
-$conexion = mysqli_connect($server, $username, $password, $database, $port);
-
-// Verificar conexión
-if (!$conexion) {
-    die("Error en la conexión: " . mysqli_connect_error());
-}
+// Conexión a la base de datos
+$conexion = require_once 'db_config.php';
+$conexion = conectarBD();
 
 // Prepara la consulta para evitar inyecciones SQL
 $consulta = "SELECT * FROM usuarios WHERE usuario = ? AND contraseña = ?";

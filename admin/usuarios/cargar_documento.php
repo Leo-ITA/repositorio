@@ -8,7 +8,8 @@ $archivo_tmp = $_FILES['archivo']['tmp_name'];
 $directorio_base = '../../uploads/';
 
 // Conectar a la base de datos
-$conexion = mysqli_connect("localhost", "root", "", "repositorio_c116");
+$conexion = require_once 'db_config.php';
+$conexion = conectarBD();
 
 // Verificar conexión
 if (!$conexion) {

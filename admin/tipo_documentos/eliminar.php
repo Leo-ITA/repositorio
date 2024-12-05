@@ -2,7 +2,8 @@
 $id = $_GET['id'];
 
 // Conexión a la base de datos
-$conexion = mysqli_connect("localhost", "root", "", "repositorio_c116");
+$conexion = require_once 'db_config.php';
+$conexion = conectarBD();
 
 // Prepara la consulta para eliminar documentos asociados al tipo de documento
 $consulta_documentos = "DELETE FROM documentos WHERE tipo = (SELECT tipo FROM tipos_documentos WHERE id = '$id')";

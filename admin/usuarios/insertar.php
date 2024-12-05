@@ -6,7 +6,8 @@ $contraseña = $_POST['contraseña'];
 $id_rol = $_POST['id_rol'];
 
 // Conexión a la base de datos
-$conexion = mysqli_connect("localhost", "root", "", "repositorio_c116");
+$conexion = require_once 'db_config.php';
+$conexion = conectarBD();
 
 // Verifica la conexión
 if (!$conexion) {

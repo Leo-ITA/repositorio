@@ -4,7 +4,8 @@ $tipo = $_POST['tipo'];
 $descripcion = $_POST['descripcion'];
 
 // Conexión a la base de datos
-$conexion = mysqli_connect("localhost", "root", "", "repositorio_c116");
+$conexion = require_once 'db_config.php';
+$conexion = conectarBD();
 
     // Actualiza los documentos que tienen el tipo antiguo
     $consulta_documentos = "UPDATE documentos SET tipo='$tipo' WHERE tipo = (SELECT tipo FROM tipos_documentos WHERE id = '$id')";

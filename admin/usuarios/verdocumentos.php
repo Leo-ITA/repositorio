@@ -10,7 +10,8 @@ if($varsesion == null || $varsesion == ''){
 }
 
 // Conexión a la base de datos
-$conexion = mysqli_connect("localhost", "root", "", "repositorio_c116");
+$conexion = require_once 'db_config.php';
+$conexion = conectarBD();
 
 
 $consulta_usuario = "SELECT * FROM usuarios WHERE id = '$id'";

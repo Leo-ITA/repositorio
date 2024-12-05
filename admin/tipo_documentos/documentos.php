@@ -8,7 +8,8 @@ if($varsesion == null || $varsesion == ''){
 }
 
 // Conexión a la base de datos
-$conexion = mysqli_connect("localhost", "root", "", "repositorio_c116");
+$conexion = require_once 'db_config.php';
+$conexion = conectarBD();
 
 // Segunda consulta para obtener todos los usuarios
 $consulta = "SELECT * FROM tipos_documentos";

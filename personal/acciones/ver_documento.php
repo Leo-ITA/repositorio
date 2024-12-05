@@ -12,7 +12,8 @@ if ($varsesion == null || $varsesion == '') {
 echo "Usuario en sesión: $varsesion <br>";
 
 // Conexión a la base de datos
-$conexion = mysqli_connect("localhost", "root", "", "repositorio_c116");
+$conexion = require_once 'db_config.php';
+$conexion = conectarBD();
 if (!$conexion) {
     die("Error de conexión: " . mysqli_connect_error());
 }
