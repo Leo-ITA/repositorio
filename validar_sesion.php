@@ -5,7 +5,7 @@ session_start();
 $_SESSION['usuario'] = $usuario;
 
 // Conexión a la base de datos
-$conexion = mysqli_connect("localhost", "root", "", "repositorio_c116");
+$conexion = mysqli_connect("serverdemo2025.mysql.database.azure.com", "adminaz", "Contrasena123", "repositorio_c116");
 
 // Prepara la consulta para evitar inyecciones SQL
 $consulta = "SELECT * FROM usuarios WHERE usuario = ? AND contraseña = ?";
